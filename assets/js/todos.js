@@ -12,7 +12,7 @@ $('ul').on('click', 'li', function(){
 
 // click on x to delete todo 
 $('ul').on('click', 'span', function(event){
-	$(this).parent().fadeOut(500, function(){     // targets the parent element, li
+	$(this).parent().fadeOut(400, function(){     // targets the parent element, li
 		$(this).remove();	// removes list element entirely
 	}); 
 	event.stopPropagation();  // this function stops the event from bubbling up to parent layers 
@@ -24,7 +24,11 @@ $('input[type="text"]').keypress(function(event){
 		// grab new text from input after enter key is pressed
 		var todoText = $(this).val();
 		// create new li and add to ul
-		$('ul').append(`<li><span>X </span>${todoText}</li>`);
+		$('ul').append(`<li><span><i class="fa fa-trash"></i></span>${todoText}</li>`);
 		$(this).val('');	// clears text box
 	}
-})
+});
+
+$('h1 i').on('click', function(){
+	$('input[type="text"]').fadeToggle();
+});

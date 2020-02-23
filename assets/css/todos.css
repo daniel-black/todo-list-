@@ -1,0 +1,13 @@
+#container {
+	border: 2px solid grey;
+	width: 360px;
+	margin: 0 auto;
+	/*margin trick: top and bottom get set 
+	to zero while the left and right get 
+	auto set. this centers the container*/
+}
+
+.completed {
+	color: gray;
+	text-decoration: line-through;
+}
